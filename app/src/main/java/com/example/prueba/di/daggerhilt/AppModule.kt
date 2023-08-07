@@ -13,11 +13,6 @@ import javax.inject.Singleton
 object AppModule {
 
     @Provides
-    fun provideBaseUrl(): String {
-        return BeerApi.BASE_URL
-    }
-
-    @Provides
     fun provideRetrofit(baseUrl: String): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
