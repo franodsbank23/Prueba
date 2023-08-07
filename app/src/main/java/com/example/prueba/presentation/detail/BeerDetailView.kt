@@ -1,4 +1,7 @@
 package com.example.prueba.presentation.detail
 
-class BeerDetailView {
+import androidx.compose.runtime.Composable
+
+@Composable
+fun BeerDetailView (){
 }

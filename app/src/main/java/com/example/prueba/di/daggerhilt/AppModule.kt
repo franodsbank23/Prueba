@@ -1,16 +1,14 @@
-package com.example.prueba.di
+package com.example.prueba.di.daggerhilt
 
 import com.example.prueba.data.remote.BeerApi
 import dagger.Provides
-import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 // DI con Dagger Hilt
 
 
-object AppModule {
+object appModule {
 
     @Provides
     fun provideRetrofit(baseUrl: String): Retrofit {

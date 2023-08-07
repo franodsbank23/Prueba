@@ -1,4 +1,6 @@
 package com.example.prueba.navigation
 
-class SealedScreen {
+sealed class SealedScreen(val route: String) {
+    object BeerListView : SealedScreen(route="BeerList_Screen")
+    object BeerDetailView : SealedScreen(route="BeerDetail_Screen")
 }

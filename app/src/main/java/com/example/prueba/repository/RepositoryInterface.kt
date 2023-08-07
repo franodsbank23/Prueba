@@ -1,4 +1,4 @@
-package com.example.prueba.presentation
+package com.example.prueba.repository
 
 class RepositoryInterface {
 }
