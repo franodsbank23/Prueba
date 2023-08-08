@@ -11,23 +11,35 @@ import com.example.prueba.presentation.list.BeerListView
 // se agrega el add porque si no te lo toma antes
 // mejorar el add
 
+
+// item, list
+// y acá el invoke
+// por eso dps navegas
+
+// screen vs view
+
 fun NavGraphBuilder.logicBeerListView(navController: NavController) {
-    composable(SealedScreen.BeerListView.route){
+    composable(Screen.BeerListView.route){
         BeerListView(
-            onDetailClicked = {
-                navController.navigate(SealedScreen.BeerDetailView.route)
+            onDetailClick = { id ->
+                navController.navigate("${Screen.BeerDetailView.route}/$id")
             }
         )
 
     }
 }
 
+// ¿le tengo que pasar todos los parámetros del composable?
 
 fun NavGraphBuilder.logicBeerDetailView(navController: NavController) {
-    composable(SealedScreen.BeerDetailView.route){
-        BeerDetailView(
-            onBackClicked = {
-                navController.navigate(SealedScreen.BeerListView.route)
+    composable(
+        route= Screen.BeerDetailView.route +"/{beerId}",
+        arguments= Screen.BeerDetailView.arguments
+    ){
+        val id = it.arguments?.getString("beerId")?: ""
+        BeerDetailView(id = id,
+            onBackClick = {
+                navController.navigate(Screen.BeerListView.route)
             }
         )
 

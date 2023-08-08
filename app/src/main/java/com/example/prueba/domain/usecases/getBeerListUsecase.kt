@@ -1,4 +1,12 @@
 package com.example.prueba.domain.usecases
 
-class getBeersUsecase {
+import com.example.prueba.data.repository.BeerRepositoryInterface
+
+class getBeerListUsecase
+    (
+    private val beerRepository: BeerRepositoryInterface
+    )
+    {
+    suspend fun invoke () = beerRepository.getBeerList()
+
 }

@@ -1,6 +1,6 @@
-package com.example.prueba.domain
+package com.example.prueba.domain.model
 
-import com.squareup.moshi.Json
+// alf inal no lo uso je
 
 data class BeerModel (
     var id: String,

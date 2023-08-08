@@ -1,6 +1,36 @@
 package com.example.prueba.navigation
 
-sealed class SealedScreen(val route: String) {
-    object BeerListView : SealedScreen(route="BeerList_Screen")
-    object BeerDetailView : SealedScreen(route="BeerDetail_Screen")
+import androidx.navigation.NamedNavArgument
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+
+sealed class Screen(
+    val route: String,
+    val arguments: List<NamedNavArgument>
+    ) {
+    object BeerListView : Screen(
+        route="BeerList_Screen",
+        arguments = emptyList()
+        )
+    object BeerDetailView : Screen(
+        route="BeerDetail_Screen",
+        arguments = listOf(
+            navArgument("beerId") {
+                type = NavType.StringType
+                nullable = false
+            }
+    )
+    )
 }
+
+
+
+
+
+/*
+sealed class Screen(val route: String) {
+    object BeerListView : Screen(route="BeerList_Screen")
+    object BeerDetailView : Screen(route="BeerDetail_Screen")
+}*/
+
+// ¿y si le pongo screen a toodo?

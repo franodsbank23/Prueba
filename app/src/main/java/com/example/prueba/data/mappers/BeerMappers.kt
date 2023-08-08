@@ -1,28 +1,35 @@
 package com.example.prueba.data.mappers
 
-import com.example.prueba.data.dto.BeerDetailDto
-import com.example.prueba.data.dto.BeerItemDto
+import com.example.prueba.domain.model.BeerItemModel
 import com.example.prueba.data.dto.principal.BeerDto
+import com.example.prueba.domain.model.BeerDetailModel
 
 
 // Los MAPPERS:
 
-fun BeerDto.toBeerItemDto(): BeerItemDto{
-    return BeerItemDto(
-        id = id,
-        name = name,
-        imageUrl = imageUrl
+
+
+
+
+
+// tipo I
+
+fun BeerDto.toBeerItemModel(): BeerItemModel {
+    return BeerItemModel(
+        id = id?: "",
+        name = name?: "",
+        imageUrl = imageUrl?: ""
     )
 }
 
-fun BeerDto.toBeerDetailDto(): BeerDetailDto{
+fun BeerDto.toBeerDetailModel(): BeerDetailModel {
 
-    return BeerDetailDto(
-        id= id,
-        name = name,
-        tagline = tagline,
-        firstBrewed = firstBrewed,
-        description = description,
-        imageUrl = imageUrl
+    return BeerDetailModel(
+        id= id?: "",
+        name = name?: "",
+        tagline = tagline?: "",
+        firstBrewed = firstBrewed?: "",
+        description = description?: "",
+        imageUrl = imageUrl?: ""
     )
 }
