@@ -51,24 +51,4 @@ fun BeerListView (
 // ¿en el invoke por qué hay que poner del id?
 // si yo nada más quiero hacer la función plana para navegar
 
-/*
-@Composable
-fun BeerListView (
-    onDetailClicked: () -> Unit
-)
-{
 
-    val list: List<BeerItemDto>
-
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(15.dp)
-    ){
-        items(list){ item ->
-            BeerItem(item){
-                onDetailClicked.invoke(beer.id)
-            }
-        }
-    }
-}*/

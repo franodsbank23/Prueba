@@ -67,35 +67,7 @@ fun BeerDetailView (
 
 // la petición de la api la hago en el VM
 
-/*
-@Composable
-fun BeerDetailView (
-    beer: BeerDetailModel
-    id: String,
-    beerDetailViewModel: DetailViewModel = koinViewModel(),
-    onBackClicked: () -> Unit
-)
-{
-    Column(modifier = Modifier.clickable { }) {
-        AsyncImage(
-            model = beer.imageUrl,
-            contentDescription = beer.name,
-            modifier = Modifier
-                .weight(2f)
-                .height(100.dp)
-        )
-        Text(text = beer.description)
-        Text(text = beer.tagline)
-        Text(text = beer.firstBrewed)
 
-
-
-
-    } ?: run {
-        ShowError("Unknown error")
-    }
-
-}*/
 
 
 

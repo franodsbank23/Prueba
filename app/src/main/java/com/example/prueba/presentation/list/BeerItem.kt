@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.example.prueba.domain.model.BeerItemModel
 
 
@@ -25,7 +27,9 @@ fun BeerItem
 {
     Column(modifier = Modifier.clickable { }) {
         AsyncImage(
-            model = beer.imageUrl,
+            model = ImageRequest.Builder(LocalContext.current)
+                .data(beer.imageUrl)
+                .build(),
             contentDescription = beer.name,
             modifier = Modifier
                 .weight(2f)
@@ -38,23 +42,25 @@ fun BeerItem
 
 // guardo
 
-/*
-@Composable
+
+/*@Composable
 fun BeerItem
             (
-    beerItemAttributes: BeerItemDto,
-    navigation: (() -> Unit)
+    beer: BeerItemModel,
+    onDetailClicked: () -> Unit
 )
 {
-    Column(modifier = Modifier.clickable { navigation() }) {
+    Column(modifier = Modifier.clickable { }) {
         AsyncImage(
-            model = beerItemAttributes.imageUrl,
-            contentDescription = beerItemAttributes.name,
+            model = beer.imageUrl,
+            contentDescription = beer.name,
             modifier = Modifier
                 .weight(2f)
                 .height(100.dp)
         )
-        Text(text = beerItemAttributes.id)
-        //Text(text = "go to details")
+        Text(text = beer.id)
+        Text(text = "go to details", modifier = Modifier.clickable { onDetailClicked() })
     }
 }*/
+
+
