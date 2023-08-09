@@ -2,9 +2,14 @@ package com.example.prueba.presentation.list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -23,25 +28,35 @@ fun BeerItem
             (
     beer: BeerItemModel,
     onDetailClicked: () -> Unit
-            )
+)
 {
-    Column(modifier = Modifier.clickable { }) {
+    Column(
+        modifier = Modifier.clickable { },
+        horizontalAlignment = Alignment.CenterHorizontally
+        )
+    {
         AsyncImage(
-            model = ImageRequest.Builder(LocalContext.current)
-                .data(beer.imageUrl)
-                .build(),
+            model = beer.imageUrl,
             contentDescription = beer.name,
             modifier = Modifier
-                .weight(2f)
+                .fillMaxWidth()
                 .height(100.dp)
+
         )
+        Text(text = beer.name)
         Text(text = beer.id)
-        Text(text = "go to details", modifier = Modifier.clickable { onDetailClicked() })
+        Button(onClick = onDetailClicked ) {
+            Text(text = "details")
+            
+        }
+        Spacer(modifier = Modifier
+            .size(20.dp)
+        )
+
     }
 }
 
 // guardo
-
 
 /*@Composable
 fun BeerItem
@@ -50,17 +65,38 @@ fun BeerItem
     onDetailClicked: () -> Unit
 )
 {
-    Column(modifier = Modifier.clickable { }) {
+    Column(
+        modifier = Modifier.clickable { },
+        horizontalAlignment = Alignment.CenterHorizontally
+        )
+    {
         AsyncImage(
             model = beer.imageUrl,
             contentDescription = beer.name,
             modifier = Modifier
-                .weight(2f)
+                .fillMaxWidth()
                 .height(100.dp)
+
         )
+        Text(text = beer.name)
         Text(text = beer.id)
-        Text(text = "go to details", modifier = Modifier.clickable { onDetailClicked() })
+        Text(
+            text = "go to details",
+            modifier = Modifier
+                .clickable { onDetailClicked() },
+        )
+        Button(onClick = onDetailClicked ) {
+            Text(text = "go to details")
+
+        }
+        Spacer(modifier = Modifier
+            .size(20.dp)
+        )
+
     }
 }*/
+
+
+
 
 
