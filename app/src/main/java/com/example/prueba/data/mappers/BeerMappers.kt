@@ -1,7 +1,7 @@
 package com.example.prueba.data.mappers
 
 import com.example.prueba.domain.model.BeerItemModel
-import com.example.prueba.data.dto.principal.BeerDto
+import com.example.prueba.data.dto.BeerDto
 import com.example.prueba.domain.model.BeerDetailModel
 
 

@@ -19,8 +19,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 //como le paso la URL pegada a la API?
 
-val baseUrl = BeerApi.BASE_URL
-
+// val baseUrl = BeerApi.BASE_URL
+val baseUrl = "https://api.punkapi.com/v2/"
 
 val DataModule = module {
 

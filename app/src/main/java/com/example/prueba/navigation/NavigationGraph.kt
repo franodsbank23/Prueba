@@ -6,6 +6,7 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun NavigationGraph() {
+
     val navController = rememberNavController()
 
     NavHost(

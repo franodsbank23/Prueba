@@ -8,18 +8,26 @@ import com.example.prueba.domain.model.BeerItemModel
 import com.example.prueba.domain.model.BeerModel
 import com.example.prueba.domain.usecases.getBeerListUsecase
 import com.example.prueba.domain.usecases.getBeerUsecase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class BeerListViewModel (
     private val getBeerListUsecase: getBeerListUsecase
     ): ViewModel() {
 
+    init {
+        getData()
+    }
+
     private  val _beerList= MutableLiveData<List<BeerItemModel>>()
     val beerList : LiveData<List<BeerItemModel>> get() = _beerList
 
-    private fun getData() {
+    fun getData() {
         viewModelScope.launch {
-                    getBeerListUsecase.invoke()
+            val result = withContext(Dispatchers.IO)
+            {getBeerListUsecase.invoke()}
+
                 }
             }
 

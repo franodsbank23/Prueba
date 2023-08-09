@@ -19,6 +19,7 @@ fun BeerListView (
     beerListViewModel: BeerListViewModel = koinViewModel()
 )
 {
+   // beerListViewModel.getData()
     println("hola")
     val state = beerListViewModel.beerList.observeAsState()
 

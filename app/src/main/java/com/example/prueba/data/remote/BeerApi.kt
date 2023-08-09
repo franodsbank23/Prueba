@@ -1,6 +1,6 @@
 package com.example.prueba.data.remote
 
-import com.example.prueba.data.dto.principal.BeerDto
+import com.example.prueba.data.dto.BeerDto
 import retrofit2.http.GET
 
 
@@ -20,6 +20,9 @@ interface BeerApi {
         const val BASE_URL = "https://api.punkapi.com/v2/"
     }
 }
+
+
+
 
 /*
 interface BeerApi {

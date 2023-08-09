@@ -1,6 +1,6 @@
 package com.example.prueba.data.remote
 
-import com.example.prueba.data.dto.principal.BeerDto
+import com.example.prueba.data.dto.BeerDto
 
 interface RemoteDataSourceInterface {
 

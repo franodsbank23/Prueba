@@ -1,6 +1,6 @@
 package com.example.prueba.data.remote
 
-import com.example.prueba.data.dto.principal.BeerDto
+import com.example.prueba.data.dto.BeerDto
 
 class RemoteDataSourceImpl (
     private val beerApi: BeerApi
@@ -10,9 +10,6 @@ class RemoteDataSourceImpl (
 
     override suspend fun getBeerById(id: String): BeerDto =
         beerApi.getBeerById(id)
-
-
-
 
     }
 
