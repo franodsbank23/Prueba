@@ -9,7 +9,7 @@ class RemoteDataSourceImpl (
         beerApi.getBeerList()
 
     override suspend fun getBeerById(id: String): BeerDto =
-        beerApi.getBeerById(id)
+        beerApi.getBeerById(id)[0]
 
     }
 

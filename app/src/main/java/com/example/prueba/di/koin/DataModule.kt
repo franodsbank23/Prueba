@@ -10,9 +10,6 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.androidx.compose.BuildConfig
-import org.koin.androidx.compose.get
-import org.koin.core.scope.get
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -20,7 +17,9 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 //como le paso la URL pegada a la API?
 
+// bien de ambas maneras
 // val baseUrl = BeerApi.BASE_URL
+
 val baseUrl = "https://api.punkapi.com/v2/"
 
 val DataModule = module {

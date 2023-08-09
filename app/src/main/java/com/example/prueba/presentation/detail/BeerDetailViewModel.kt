@@ -25,6 +25,7 @@ class BeerDetailViewModel (
             val result = withContext(Dispatchers.IO){
                 getBeerUsecase.invoke(id)
             }
+            _beer.postValue(result)
             }
 
     }

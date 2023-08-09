@@ -4,11 +4,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.prueba.domain.model.BeerItemModel
 import org.koin.androidx.compose.koinViewModel
 
 // hay que traerla de la API
@@ -20,7 +20,10 @@ fun BeerListView (
 )
 {
    // beerListViewModel.getData()
-    println("hola")
+    // println("hola")
+    LaunchedEffect(true ){
+        beerListViewModel.getData()
+    }
     val state = beerListViewModel.beerList.observeAsState()
 
 

@@ -2,6 +2,7 @@ package com.example.prueba.data.remote
 
 import com.example.prueba.data.dto.BeerDto
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 
 // revisar suspend fun
@@ -13,7 +14,7 @@ interface BeerApi {
     suspend fun getBeerList(): List<BeerDto>
 
     @GET("beers/{id}")
-    suspend fun getBeerById(id: String): BeerDto
+    suspend fun getBeerById(@Path("id") id: String): List<BeerDto>
 
 
     companion object{
