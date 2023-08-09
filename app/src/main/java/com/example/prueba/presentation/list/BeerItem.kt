@@ -7,10 +7,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
+import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -50,8 +52,13 @@ fun BeerItem
             
         }
         Spacer(modifier = Modifier
-            .size(20.dp)
+            .size(10.dp)
         )
+        Divider(color = Color.Blue, thickness = 1.dp)
+        Spacer(modifier = Modifier
+            .size(10.dp)
+        )
+
 
     }
 }

@@ -10,3 +10,4 @@ interface BeerRepositoryInterface {
 
     suspend fun getBeerById(id: String): BeerDetailModel
 }
+
