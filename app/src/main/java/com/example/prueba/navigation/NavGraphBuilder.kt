@@ -5,6 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.prueba.presentation.detail.BeerDetailView
 import com.example.prueba.presentation.list.BeerListView
+import com.example.prueba.ui.components.InfoComponentView
 
 //acá gestionamos las acciones del composable
 
@@ -43,6 +44,18 @@ fun NavGraphBuilder.logicBeerDetailView(navController: NavController) {
             }
         )
 
+    }
+}
+
+// acá está vista con AVS
+fun NavGraphBuilder.logicInfoComponentView(navController: NavController){
+    composable(
+        route = Screen.InfoComponentView.route,
+        arguments = Screen.InfoComponentView.arguments
+    ){
+        InfoComponentView (
+            onBackClick = {navController.navigate(Screen.BeerListView.route)}
+        )
     }
 }
 

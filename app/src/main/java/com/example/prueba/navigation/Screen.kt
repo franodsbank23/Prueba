@@ -21,6 +21,11 @@ sealed class Screen(
             }
     )
     )
+
+    object InfoComponentView: Screen (
+        route="InfoComponent_Screen",
+        arguments = emptyList()
+            )
 }
 
 

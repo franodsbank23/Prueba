@@ -17,6 +17,7 @@ fun NavigationGraph() {
     {
         logicBeerListView(navController)
         logicBeerDetailView(navController)
+        logicInfoComponentView(navController)
 
     }
 }

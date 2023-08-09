@@ -24,6 +24,7 @@ import org.koin.androidx.compose.koinViewModel
 
 // hay que traerla de la API
 
+// hay que pasarle la info también
 @Composable
 fun BeerListView (
     onDetailClick: (String) -> Unit,
@@ -45,6 +46,8 @@ fun BeerListView (
 
     }*/
 
+
+
     TopAppBar(
         modifier = Modifier,
         backgroundColor = Color.Cyan
@@ -55,7 +58,7 @@ fun BeerListView (
 
     }
 
-    // ¿qué hago con esto?
+    Icon(imageVector = Icons.Filled.Info, contentDescription = "informacion")
 
     Spacer(modifier = Modifier
         .size(100.dp)
@@ -81,8 +84,5 @@ fun BeerListView (
     }}
 
 
-
-// ¿en el invoke por qué hay que poner del id?
-// si yo nada más quiero hacer la función plana para navegar
 
 
