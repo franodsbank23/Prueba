@@ -49,9 +49,10 @@ fun BeerDetailView (
                 .weight(2f)
                 .height(100.dp)
         )
-            Text(text = result!!.description)
-            Text(text = result.tagline)
-            Text(text = result.firstBrewed)
+            result?.let{Text(text = result!!.description)
+                Text(text = result.tagline)
+                Text(text = result.firstBrewed)}
+
 
             IconButton(
                 modifier = Modifier.semantics {
