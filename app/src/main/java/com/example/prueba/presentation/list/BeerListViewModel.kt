@@ -26,7 +26,10 @@ class BeerListViewModel (
     fun getData() {
         viewModelScope.launch {
             val result = withContext(Dispatchers.IO)
-            {getBeerListUsecase.invoke()}
+            {
+                getBeerListUsecase.invoke()
+            }
+            _beerList.value= result
 
                 }
             }

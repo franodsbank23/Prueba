@@ -15,6 +15,7 @@ import org.koin.androidx.compose.get
 import org.koin.core.scope.get
 import org.koin.dsl.module
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 //como le paso la URL pegada a la API?
@@ -35,6 +36,7 @@ val DataModule = module {
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     }
