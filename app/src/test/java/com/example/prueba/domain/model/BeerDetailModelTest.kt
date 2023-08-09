@@ -1,6 +1,6 @@
 package com.example.prueba.domain.model
 
-import com.example.prueba.BeerTestDataBuilder
+import com.example.prueba.testutil.BeerTestDataBuilder
 import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.notNullValue

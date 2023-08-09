@@ -3,28 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
+    android:gravity="center_vertical"
+    android:padding="10dp"
     >
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="<-" />
+        android:text="back" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Esquema del Funcionamiento de la APP" />
+        android:text="Esquema del Detalle de la APP" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="218dp"
-        android:layout_height="284dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:id="@+id/imageView2"
+        android:layout_width="254dp"
+        android:layout_height="281dp"
+        app:srcCompat="@drawable/cerveza_quilmes" />
 
     <TextView
         android:id="@+id/textView2"
@@ -37,4 +39,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tagline" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First Brewed (beta)" />
 </LinearLayout>

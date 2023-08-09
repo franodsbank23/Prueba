@@ -2,11 +2,10 @@ package com.example.prueba.domain.usecases
 
 import com.example.prueba.data.repository.BeerRepositoryInterface
 import com.example.prueba.domain.model.BeerDetailModel
-import com.example.prueba.domain.model.BeerModel
 
 //acá tenemos la función invoke que llevamos a todos lados
 
-class getBeerUsecase (
+class GetBeerUsecase (
     private val beerRepository: BeerRepositoryInterface
         )
 {

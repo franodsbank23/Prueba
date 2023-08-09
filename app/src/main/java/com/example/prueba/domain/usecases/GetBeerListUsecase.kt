@@ -2,7 +2,7 @@ package com.example.prueba.domain.usecases
 
 import com.example.prueba.data.repository.BeerRepositoryInterface
 
-class getBeerListUsecase
+class GetBeerListUsecase
     (
     private val beerRepository: BeerRepositoryInterface
     )

@@ -5,15 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.prueba.domain.model.BeerDetailModel
-import com.example.prueba.domain.model.BeerModel
-import com.example.prueba.domain.usecases.getBeerListUsecase
-import com.example.prueba.domain.usecases.getBeerUsecase
+import com.example.prueba.domain.usecases.GetBeerUsecase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class BeerDetailViewModel (
-    private val getBeerUsecase: getBeerUsecase
+    private val getBeerUsecase: GetBeerUsecase
 ): ViewModel() {
 
     private  val _beer = MutableLiveData<BeerDetailModel>()

@@ -1,12 +1,14 @@
-package com.example.prueba
+package com.example.prueba.testutil
 
 import com.example.prueba.domain.model.BeerDetailModel
 
 class BeerTestDataBuilder {
     val id = "test-id"
     var name = ""
-    var photoUrl = ""
+    var imageUrl = ""
     var description = ""
+    var tagline = ""
+    var firstBrewed = ""
     var numElements: Int = 1
 
     fun withName(name: String): BeerTestDataBuilder {
@@ -14,13 +16,23 @@ class BeerTestDataBuilder {
         return this
     }
 
-    fun withImageUrl(photoUrl: String): BeerTestDataBuilder {
-        this.photoUrl = photoUrl
+    fun withImageUrl(imageUrl: String): BeerTestDataBuilder {
+        this.imageUrl = imageUrl
         return this
     }
 
     fun withDescription(description: String): BeerTestDataBuilder {
         this.description = description
+        return this
+    }
+
+    fun withTagline(tagline: String): BeerTestDataBuilder{
+        this.tagline = tagline
+        return this
+    }
+
+    fun firstBrewed(firstBrewed: String): BeerTestDataBuilder{
+        this.firstBrewed = firstBrewed
         return this
     }
 
@@ -38,7 +50,7 @@ class BeerTestDataBuilder {
                 BeerDetailModel(
                     id= id,
                     name = name,
-                    imageUrl = photoUrl,
+                    imageUrl = imageUrl,
                     description = description,
                     tagline = tagline,
                     firstBrewed = firstBrewed
@@ -50,9 +62,11 @@ class BeerTestDataBuilder {
     }
 
     fun buildSingle() = BeerDetailModel(
-        id = id,
+        id= id,
         name = name,
-        imageUrl = photoUrl,
-        description = description
+        imageUrl = imageUrl,
+        description = description,
+        tagline = tagline,
+        firstBrewed = firstBrewed
     )
 }
