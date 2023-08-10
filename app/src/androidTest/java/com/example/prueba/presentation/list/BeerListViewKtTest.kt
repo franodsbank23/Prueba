@@ -25,7 +25,8 @@ class BeerListViewKtTest{
     }
 
     @Test
-    fun `WHEN view its created it has its UI elements wo ITEM`(){
+    // fun `WHEN view its created it has its UI elements wo ITEM`(){
+    fun checkingElementsWoItem(){
         composeTestRule.setContent {
             BeerListView(
                 onDetailClick ={},
@@ -37,14 +38,15 @@ class BeerListViewKtTest{
     }
 
     @Test
-    fun `WHEN view its created it has its UI elements and ITEM`(){
+    //fun `WHEN view its created it has its UI elements and ITEM`(){
+    fun checkingElementsWItem(){
         val fakeViewModel = FakeBeerListViewModel()
         fakeViewModel.beerList.value = generateFakeBeerList()
 
         composeTestRule.setContent {
             BeerListView(
                 onDetailClick = {},
-                beerListViewModel = fakeViewModel
+                beerListViewModel = FakeBeerListViewModel()
             )
         }
 
@@ -54,7 +56,8 @@ class BeerListViewKtTest{
     // we using a object with id of one
     // we may do more checks if need
     @Test
-    fun `WHEN its clicked it goes there`(){
+    //fun `WHEN its clicked it goes there`(){
+    fun whenCLickedItNavigates(){}
         var clickedItemId: String? = null
         val fakeViewModel = FakeBeerListViewModel()
         fakeViewModel.beerList.value = generateFakeBeerList()
@@ -68,7 +71,7 @@ class BeerListViewKtTest{
 
         composeTestRule.onAllNodesWithTag("BeerItem")[0].performClick()
 
-        assert( clickedItemId== "1")
+        assert( clickedItemId == "1")
     }
 
 

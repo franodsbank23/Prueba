@@ -5,6 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.prueba.presentation.detail.BeerDetailView
 import com.example.prueba.presentation.list.BeerListView
+import com.example.prueba.presentation.start.BeerStartView
 import com.example.prueba.ui.components.InfoComponentView
 
 //acá gestionamos las acciones del composable
@@ -18,6 +19,16 @@ import com.example.prueba.ui.components.InfoComponentView
 // por eso dps navegas
 
 // screen vs view
+
+fun NavGraphBuilder.logicBeerStartView(navController: NavController){
+    composable(Screen.BeerStartView.route){
+        BeerStartView (
+            onStartClick = {
+                navController.navigate(Screen.BeerListView.route)
+            }
+        )
+    }
+}
 
 fun NavGraphBuilder.logicBeerListView(navController: NavController) {
     composable(Screen.BeerListView.route){

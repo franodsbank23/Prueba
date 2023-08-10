@@ -8,6 +8,11 @@ sealed class Screen(
     val route: String,
     val arguments: List<NamedNavArgument>
     ) {
+
+    object BeerStartView : Screen(
+        route="BeerStart_Screen",
+        arguments = emptyList()
+    )
     object BeerListView : Screen(
         route="BeerList_Screen",
         arguments = emptyList()

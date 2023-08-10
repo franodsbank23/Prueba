@@ -11,10 +11,11 @@ fun NavigationGraph() {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.BeerListView.route,
+        startDestination = Screen.BeerStartView.route,
     )
 
     {
+        logicBeerStartView(navController)
         logicBeerListView(navController)
         logicBeerDetailView(navController)
         logicInfoComponentView(navController)
