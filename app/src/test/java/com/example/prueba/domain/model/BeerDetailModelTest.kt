@@ -39,7 +39,7 @@ class BeerDetailModelTest {
             val beer = BeerTestDataBuilder()
                 .withName("Roja")
                 .buildSingle()
-            assertThat(beer.name, `is`("Roja))
+            assertThat(beer.name, `is`("Roja"))
         }
 
 
