@@ -24,6 +24,9 @@ fun NavGraphBuilder.logicBeerListView(navController: NavController) {
         BeerListView(
             onDetailClick = { id ->
                 navController.navigate("${Screen.BeerDetailView.route}/$id")
+            },
+            onInfoClick = {
+                navController.navigate(Screen.InfoComponentView.route)
             }
         )
 

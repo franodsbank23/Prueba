@@ -8,10 +8,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
@@ -25,8 +29,10 @@ import org.koin.androidx.compose.koinViewModel
 // hay que traerla de la API
 
 // hay que pasarle la info también
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BeerListView (
+    onInfoClick: () -> Unit,
     onDetailClick: (String) -> Unit,
     beerListViewModel: BeerListViewModel = koinViewModel()
 )
@@ -47,41 +53,47 @@ fun BeerListView (
     }*/
 
 
+    Column() {
+        CenterAlignedTopAppBar (
+            title = {
+                Text("Beer App") },
+            colors = TopAppBarDefaults.mediumTopAppBarColors(
+                containerColor = Color.Cyan
+            ),
+            actions = {IconButton(onClick = onInfoClick) {
+                Icon(imageVector = Icons.Filled.Info, contentDescription = "informacion")
+            }}
 
-    TopAppBar(
-        modifier = Modifier,
-        backgroundColor = Color.Cyan
-    ) {
-        Text(
-            text = "Beer Aplication",
-            textAlign = TextAlign.Center)
+        )
 
-    }
 
-    Icon(imageVector = Icons.Filled.Info, contentDescription = "informacion")
 
-    Spacer(modifier = Modifier
-        .size(100.dp)
-    )
 
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(15.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    )
-    {
-        val beerList = state.value
-        items(beerList?.size ?: 0) { i ->
-            // Unwrap
-            val item = beerList?.get(i)
-            item?.let { beer ->
-                BeerItem(beer) {
-                    onDetailClick.invoke(beer.id)
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(15.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
+        {
+            val beerList = state.value
+            items(beerList?.size ?: 0) { i ->
+                // Unwrap
+                val item = beerList?.get(i)
+                item?.let { beer ->
+                    BeerItem(beer) {
+                        onDetailClick.invoke(beer.id)
+                    }
                 }
             }
         }
-    }}
+
+    }
+
+
+
+
+}
 
 
 

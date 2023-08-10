@@ -33,7 +33,7 @@ class BeerDetailViewModelTest{
 
     @Test
     fun `WHEN detail viewModel getData EXPECT returns data`() = runTest {
-        coEvery { GetBeerUsecase.invoke("test-id") } returns
+        coEvery { getBeerUseCase.invoke("test-id") } returns
                 BeerTestDataBuilder().buildSingle()
 
         val viewModel = BeerDetailViewModel(getBeerUseCase)

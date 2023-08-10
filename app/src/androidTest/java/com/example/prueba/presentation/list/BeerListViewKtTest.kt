@@ -25,7 +25,7 @@ class BeerListViewKtTest{
     }
 
     @Test
-    fun `WHEN view its crated it has its UI elements wo ITEM`(){
+    fun `WHEN view its created it has its UI elements wo ITEM`(){
         composeTestRule.setContent {
             BeerListView(
                 onDetailClick ={},
