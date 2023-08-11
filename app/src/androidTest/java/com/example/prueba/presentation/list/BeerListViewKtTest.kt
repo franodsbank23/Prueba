@@ -1,5 +1,6 @@
 package com.example.prueba.presentation.list
 
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -86,6 +87,6 @@ data class Beer(
     val description: String
 )
 class FakeBeerListViewModel : BeerListViewModel(){
-    val beerList = LiveData<Beer?>(null)
+    val beerList = mutableStateOf<List<Beer?>>(null)
 }
 
