@@ -7,11 +7,12 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.lifecycle.LiveData
 import org.junit.Rule
 import org.junit.Test
 import java.io.FileDescriptor
 
-
+// pendiente de resolver: crear fake view model
 class BeerListViewKtTest{
 
     @get:Rule
@@ -57,7 +58,7 @@ class BeerListViewKtTest{
     // we may do more checks if need
     @Test
     //fun `WHEN its clicked it goes there`(){
-    fun whenCLickedItNavigates(){}
+    fun whenCLickedItNavigates(){
         var clickedItemId: String? = null
         val fakeViewModel = FakeBeerListViewModel()
         fakeViewModel.beerList.value = generateFakeBeerList()
@@ -65,7 +66,7 @@ class BeerListViewKtTest{
         composeTestRule.setContent {
             BeerListView(
                 onDetailClick = {itemId -> clickedItemId = itemId},
-                beerListViewModel = fakeViewModel
+                beerListViewModel = FakeBeerListViewModel
             )
         }
 
@@ -85,6 +86,6 @@ data class Beer(
     val description: String
 )
 class FakeBeerListViewModel : BeerListViewModel(){
-    val beerList = mutableStateOf<List<Beer?>(null)
+    val beerList = LiveData<Beer?>(null)
 }
 
