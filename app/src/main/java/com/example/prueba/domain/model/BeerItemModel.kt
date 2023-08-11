@@ -1,6 +1,6 @@
-package com.example.prueba.data.dto
+package com.example.prueba.domain.model
 
-class BeerItemDto (
+class BeerItemModel (
 
     var id: String,
     var name: String,

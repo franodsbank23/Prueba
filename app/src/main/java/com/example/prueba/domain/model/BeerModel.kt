@@ -1,14 +1,12 @@
-package com.example.prueba.data.dto
+package com.example.prueba.domain.model
 
-import com.squareup.moshi.Json
+// alf inal no lo uso je
 
-class BeerDetailDto (
-
+data class BeerModel (
     var id: String,
     var name: String,
     var tagline: String,
     var firstBrewed: String,
     var description: String,
     var imageUrl: String,
-
-    )
+)
