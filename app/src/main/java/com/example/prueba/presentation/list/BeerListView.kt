@@ -37,20 +37,10 @@ fun BeerListView (
     beerListViewModel: BeerListViewModel = koinViewModel()
 )
 {
-   // beerListViewModel.getData()
-    // println("hola")
     LaunchedEffect(true ){
         beerListViewModel.getData()
     }
     val state = beerListViewModel.beerList.observeAsState()
-
-    /*Column() {
-        IconButton(onClick = onInfoClick) {
-            Icon(Icons.Filled.Info)
-
-        }
-
-    }*/
 
 
     Column() {
@@ -65,9 +55,6 @@ fun BeerListView (
             }}
 
         )
-
-
-
 
         LazyColumn(
             modifier = Modifier

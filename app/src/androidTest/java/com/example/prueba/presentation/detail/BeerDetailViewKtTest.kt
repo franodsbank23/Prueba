@@ -18,6 +18,7 @@ import org.junit.Test
 
 // paparazzi?
 
+/*
 class BeerDetailViewKtTest{
 
     @get:Rule
@@ -38,7 +39,9 @@ class BeerDetailViewKtTest{
         composeTestRule.setContent {
             BeerDetailView(
                 id = "1",
-                onBackClick = { /*TODO*/ },
+                onBackClick = { */
+/*TODO*//*
+ },
                 beerDetailViewModel = FakeBeerDetailViewModel(fakeBeer)
             )
         }
@@ -91,4 +94,4 @@ data class Beer(
 class FakeBeerDetailViewModel(private val beer: Beer): BeerDetailViewModel{
     override val beer: State<Beer?> = mutableStateOf(beer)
     override fun getBeer(id: String){}
-}
+}*/

@@ -24,20 +24,3 @@ class BeerRepositoryImpl(
 }
 
 
-
-// me errorea:
-
-
-/*
-class BeerRepositoryImpl(
-    private val remoteDataSource: RemoteDataSourceInterface,
-) : BeerRepositoryInterface {
-    override suspend fun getBeerList(): List<BeerModel> {
-        val remoteData= remoteDataSource.getBeerList()
-    }
-
-    override suspend fun getBeerById(id: String): BeerModel =
-        remoteDataSource.getBeerById(id)
-
-
-}*/

@@ -12,11 +12,11 @@ class BeerListViewModel (
     private val getBeerListUsecase: GetBeerListUsecase
     ): ViewModel() {
 
-  /*  init {
+    /* init {
         getData()
     }*/
 
-    private  val _beerList= MutableLiveData<List<BeerItemModel>>()
+    private  val _beerList = MutableLiveData<List<BeerItemModel>>()
     val beerList : LiveData<List<BeerItemModel>> get() = _beerList
 
     fun getData() {
@@ -25,6 +25,4 @@ class BeerListViewModel (
             _beerList.postValue(result)
                 }
             }
-
-
 }
